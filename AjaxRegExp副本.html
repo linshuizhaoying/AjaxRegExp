@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ajax动态生成Tools测试</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			body{
+				background-image: url(1.jpg);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="panel panel-default"  style="opacity:0.7">
+				<div class="panel-body">
+					 <div class="panel-heading">
+					    <h3 class="panel-title">准备转换的源代码（格式前为两个空格的缩进）</h3>
+					  </div>
+						<textarea id="Test_area" rows="14" cols="156"><div class="test" id="xxx" asd="nnn">
+   <img src="xxx" border="0" width="160" class="img_ad" onload="">
+   <div class="op_best_answer_answer c-row c-gap-top-small" id="wc" wc="fuck"> 
+       <div>
+         <a href="www.baidu.com">这是超链接</a>
+      </div>
+     <p>wxxwxxw</p>
+   </div>
+   <img src="xxx" border="0" width="160" class="img_ad" onload="">
+   <img src="xxx" border="0" width="160" class="img_ad" onload="">
+   <a href="www.baidu.com">这是超链接</a>
+   <div>
+      <a href="www.baidu.com">这是超链接</a>
+   </div>
+</div>
+<div id="test_area" rows="14" cols="156">
+   <div class="o" id="wc" wc="fuck"> 
+       <div>
+         <div>
+           <a href="www.baidu.com">这是超链接</a>
+        </div>
+      </div>
+     <p>wxxwxxw</p>
+   </div>
+</div></textarea> 
+					</div>
+			</div>
+			<div class="panel panel-success"  style="opacity:0.5">
+				<div class="panel-body text-center">
+				  <div class="btn btn-info format">格式修正</div><div class="btn btn-primary translate">开始转换</div>
+				</div>
+			</div>
+			<div class="panel panel-info"  style="opacity:0.7">
+				<div class="panel-body">
+					 <div class="panel-heading">
+					    <h3 class="panel-title">转换后的代码</h3>
+					  </div>
+						<textarea id="Test_result" rows="14" cols="156">
+							
+						</textarea> 
+					 </div>
+			</div>
+				
+		</div>
+
+	</body>
+	     <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+		  <script src="js/Ajax_regExp.js" type="text/javascript"></script>
+		  <script type="text/javascript">
+			  $(function (){
+				  $(".translate").on('click', function(){
+				  	  $('#Test_area').Qpl_AjaxReg();
+				  });
+				  $(".format").on('click', function(){
+				  	  $('#Test_area').Qpl_AjaxReg({
+				  	  	 'type': 'format'
+				  	  });
+				  });
+				 });
+		  </script>
+</html>
